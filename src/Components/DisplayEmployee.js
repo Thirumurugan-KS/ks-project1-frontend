@@ -36,7 +36,7 @@ export default function DisplayEmployee() {
             { loading ? "Loading..." : employeeList ?  (
                 
                 employeeList.map(emp =>{ return(
-                (emp.name).includes(search) && <Row className="employee-list" key={emp._id}>
+                ((emp.name).toLowerCase()).includes(search.toLowerCase()) && <Row className="employee-list" key={emp._id}>
 
                     <Col md={2} className="col-data"><b className='hide'>Name : </b>{emp.name}</Col>
                     <Col md={2} className="col-data"><b className='hide'>Gender : </b>{emp.gender}</Col>

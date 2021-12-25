@@ -6,7 +6,7 @@ import { useSelector , useDispatch } from "react-redux"
 import { AiTwotoneHome } from 'react-icons/ai';
 import { CgInsertAfter } from 'react-icons/cg';
 import { GoSignOut } from 'react-icons/go'
-export default function SideBar() {
+export default function SideBar({value}) {
     const dispatch = useDispatch()
 
     const user = useSelector(state => state.user)
@@ -26,14 +26,14 @@ export default function SideBar() {
         <div className='aside'>
         <div className="sidebar">
         <div className='sidebarTitle'>
-        <h1>T.h.i.r.u</h1>
+        <h5>Employee Details</h5>
         </div>
         <div >
         <div className='sidebarItem'>
-        <p><AiTwotoneHome color="white"/><Link to="/home" style={{ textDecoration: 'none' , color : 'white' }}> . Home</Link></p>
+        <p><Link to="/home" style={{ textDecoration: 'none' , color : 'white' }} className={value==='home' ? "text-black": " "}><AiTwotoneHome color="white"/> . Home</Link></p>
         </div>
         <div className='sidebarItem'>
-        <p><CgInsertAfter color="white"/><Link to="/details" style={{ textDecoration: 'none' , color : 'white' }}> . Employee Details</Link></p>
+        <p><Link to="/details" style={{ textDecoration: 'none' , color : 'white' }} className={value==='employee' ? "text-black": " "}><CgInsertAfter color="white"/> . Employee Details</Link></p>
         </div>
         <div className='sidebarItem'>
         <p><GoSignOut color="white"/><Link to="/" style={{ textDecoration: 'none' , color : 'white' }} onClick={ e =>dispatch(userLogoutAction())}> . Sign out</Link></p>

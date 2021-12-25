@@ -11,7 +11,7 @@ export default function HomeScreen() {
     return (
         <div className='containermain'>
 
-        <SideBar/>
+        <SideBar value="home"/>
         <div className='main'>
             <h1>Home Page</h1>
             <p>Kindly go to <Link to='/details'>details page</Link></p>
